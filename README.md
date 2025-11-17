@@ -12,55 +12,56 @@ Contexto de negocio
 El proyecto simula el caso de un servicio hotelero que busca optimizar su gestión de reservas mediante el análisis del comportamiento de sus clientes.
 
 ## Los objetivos de negocio incluyen:
-[ ] Reducir el impacto económico de las cancelaciones recurrentes.
+- Reducir el impacto económico de las cancelaciones recurrentes.
 
-[ ] Predecir la probabilidad de cancelación para ajustar políticas y descuentos.
+-  Predecir la probabilidad de cancelación para ajustar políticas y descuentos.
 
-[ ] Identificar patrones de comportamiento en clientes y segmentos del mercado.
+-  Identificar patrones de comportamiento en clientes y segmentos del mercado.
 
-[ ] Se plantea, además, el diseño de estrategias basadas en perfiles de clientes con mayor o menor propensión a cancelar.
+-  Se plantea, además, el diseño de estrategias basadas en perfiles de clientes con mayor o menor propensión a cancelar.
 
 ## Hipótesis analizadas
-[ ] H1: El segmento del mercado influye en el tipo de habitación reservada.
-Se realiza un Test de independencia (Chi-cuadrado) entre market_segment y reserved_room_type. Se rechaza la hipótesis nula. El segmento del mercado influye en el tipo de habitación reservada.
+- H1: El segmento del mercado influye en el tipo de habitación reservada.
+Se realiza un Test de independencia (Chi-cuadrado) entre market_segment y reserved_room_type. Se rechaza la hipótesis nula (p_value < 0.05). El segmento del mercado influye en el tipo de habitación reservada. 
 
 
 - H2: Un precio promedio alto tiene una relación directa con las cancelaciones. 
-Test de diferencia de medias (t-test) entre adr en reservas canceladas y no canceladas. Se rechaza la hipótesis nula. Un precio promedio alto tiene una relación directa con las cancelaciones.
+Test de diferencia de medias (t-test) entre adr en reservas canceladas y no canceladas. Se rechaza la hipótesis nula (p_value < 0.05). Un precio promedio alto tiene una relación directa con las cancelaciones.
 
 
 *   H3: La cantidad de noches reservadas se relaciona con el precio.
-Correlación de Pearson entre adr y total nights. Se rechaza la hipótesis nula. La cantidad de noches reservadas se relaciona con el precio.
+Correlación de Pearson entre adr y total nights. Se rechaza la hipótesis nula (p_value < 0.05). La cantidad de noches reservadas se relaciona con el precio.
 
 
-H4: La cantidad de noches reservadas se relaciona con el precio. 
-Análisis de varianza (ANOVA) entre lead_time y is_canceled.Se rechaza la hipótesis nula. El tipo de 'lead' afecta la tasa de cancelación.
-Exploración y limpieza
-Valores nulos:
+- H4: La cantidad de noches reservadas se relaciona con el precio. 
+Análisis de varianza (ANOVA) entre lead_time y is_canceled.Se rechaza la hipótesis nula(p_value < 0.05). El tipo de 'lead' afecta la tasa de cancelación.
+
+## Exploración y limpieza
+### Valores nulos:
 A partir del test de Little llegamos a que los datos faltantes no son completamente random por lo que optamos por imputar con KNN los datos faltantes de 'children', 'country' y 'agent'. 
-Valores atípicos:
+### Valores atípicos:
 Decisión de no eliminar outliers en variables clave como adr (precio promedio), ya que reflejan picos de tarifas estacionales y reservas grupales.
 
 
-**Duplicados:**
+### Duplicados:
 
 
 Eliminados registros repetidos para evitar sesgos en conteos.
 
 
-Preparación de variables
-Encoding:
+## Preparación de variables
+### Encoding:
 
 
 Variables categóricas (como market_segment, meal, hotel) convertidas con one-hot encoding.
 
 
-Escalamiento:
+### Escalamiento:
 
 
 Utilizamos Standard Scaler para estandarizar las variables excluyendo las columnas 'agent' porque es un Id, 'is_canceled' porque es el target,y  'arrival_date_year' porque es una fecha.
 
-Dashboard exploratorio en Power BI
+## Dashboard exploratorio en Power BI
 
 Principales visualizaciones desarrolladas:
 Distribución de reservas por segmento de mercado y tipo de habitación; vinculado al estado de cancelación. 
