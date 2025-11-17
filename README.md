@@ -12,9 +12,11 @@ Contexto de negocio
 El proyecto simula el caso de un servicio hotelero que busca optimizar su gestión de reservas mediante el análisis del comportamiento de sus clientes.
 
 ## Los objetivos de negocio incluyen:
-[x] Reducir el impacto económico de las cancelaciones recurrentes.
-[x] Predecir la probabilidad de cancelación para ajustar políticas y descuentos.
-[x] Identificar patrones de comportamiento en clientes y segmentos del mercado.
+[ ] Reducir el impacto económico de las cancelaciones recurrentes.
+
+[ ] Predecir la probabilidad de cancelación para ajustar políticas y descuentos.
+
+[ ] Identificar patrones de comportamiento en clientes y segmentos del mercado.
 
 Se plantea, además, el diseño de estrategias basadas en perfiles de clientes con mayor o menor propensión a cancelar.
 Hipótesis analizadas
