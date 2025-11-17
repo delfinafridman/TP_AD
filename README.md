@@ -108,3 +108,21 @@ La tasa de cancelación se ve relacionada a la condición del huésped, si ya se
   - Permitir alertas tempranas para reservas con alta probabilidad de cancelación.
   - Ajustar la disponibilidad real del hotel (overbooking controlado).
 
+## Limitaciones del estudio y líneas futuras de trabajo
+### Limitaciones
+- Algunas variables con poder explicativo limitado (por ejemplo: agent, company) podrían estar desactualizadas o incompletas.
+
+- La información sobre pagos, políticas de cancelación o promociones no está incluida, lo que limita la capacidad para explicar ciertas decisiones de los clientes.
+
+- El modelo no contempla factores externos como feriados, eventos especiales, clima o variaciones económicas.
+
+### Líneas futuras de investigación o mejora
+- Incorporar datos externos (inflación, feriados, clima, eventos locales) para enriquecer el análisis.
+
+- Construir un sistema de alerta temprana conectado al sistema de reservas del hotel..
+
+- Evaluar impacto de nuevas políticas comerciales 
+
+
+
+
